@@ -1,7 +1,7 @@
-chrome.runtime.sendMessage({ event: "removeLocalStreamers" });
+chrome.runtime.sendMessage({ event: 'removeLocalStreamers' });
 
 chrome.runtime.onMessage.addListener((message) => {
-  if (message.event == 'clearScreen') {
+  if (message.event === 'clearScreen') {
     clearScreen();
   }
 });
@@ -10,11 +10,11 @@ const divIsLoaded = (): boolean => {
   return document.getElementsByTagName('h4').length > 1;
 }
 
-const checkDom = (timerID: number, start: Date): void => {
+const checkDom = (timerID: number, startTime: number): void => {
   if (divIsLoaded()) {
     removeDiv();
   } else {
-    let timePassed: number = new Date().getTime() - start.getTime();
+    const timePassed = new Date().getTime() - startTime;
     if (timePassed > 5000) {
       clearInterval(timerID);
     }
@@ -40,7 +40,7 @@ const removeDiv = (): void => {
 
 const clearScreen = () => {
   let timerID = 0;
-  let start = new Date();
-  timerID = setInterval(checkDom.bind(this, timerID, start), 200);
+  let startTime = new Date().getTime();
+  timerID = setInterval(checkDom.bind(this, timerID, startTime), 200);
 }
 clearScreen();
