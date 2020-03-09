@@ -39,8 +39,12 @@ const removeDiv = (): void => {
 }
 
 const clearScreen = () => {
-  let timerID = 0;
-  let startTime = new Date().getTime();
-  timerID = setInterval(checkDom.bind(this, timerID, startTime), 200);
+  chrome.storage.sync.get('remove', (res) => {
+    if (res.remove) {
+      let timerID = 0;
+      let startTime = new Date().getTime();
+      timerID = setInterval(checkDom.bind(this, timerID, startTime), 200);
+    }
+  })
 }
 clearScreen();

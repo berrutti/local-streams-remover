@@ -3,7 +3,8 @@ const path = require('path');
 module.exports = {
   entry: {
     content: './src/content',
-    event: './src/event'
+    event: './src/event',
+    popup: './src/popup'
   },
   devtool: 'inline-source-map',
   mode: 'production',

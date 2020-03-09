@@ -30,8 +30,8 @@
   ],
   "permissions": [
     "tabs",
-    "*://*.twitch.tv/directory/game/*",
-    "tabs",
-    "webNavigation"
+    "*://*.twitch.tv/*",
+    "webNavigation",
+    "storage"
   ]
 }
