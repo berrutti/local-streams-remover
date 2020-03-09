@@ -11,7 +11,7 @@
   "page_action": {
     "default_icon": "icon16.png",
     "default_popup": "popup.html",
-    "default_title": "Twitch Local Remover"
+    "default_title": "Local Streams Remover"
   },
   "background": {
     "scripts": [
