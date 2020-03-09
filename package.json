@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "dev": "webpack -d --watch"
+    "dev": "webpack --watch"
   },
   "author": "Matias Berrutti",
   "license": "MIT",

@@ -5,6 +5,7 @@ module.exports = {
     content: './src/content',
     event: './src/event'
   },
+  devtool: 'inline-source-map',
   mode: 'production',
   module: {
     rules: [
