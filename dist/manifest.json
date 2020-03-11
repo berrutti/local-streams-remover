@@ -4,27 +4,22 @@
   "version": "1.0",
   "description": "Removes local streams from the channels list",
   "icons": {
-    "128": "icon128.png",
-    "48": "icon48.png",
-    "16": "icon16.png"
+    "128": "img/icon128.png",
+    "48": "img/icon48.png",
+    "16": "img/icon16.png"
   },
   "page_action": {
-    "default_icon": "icon16.png",
+    "default_icon": "img/icon16.png",
     "default_popup": "popup.html",
     "default_title": "Local Streams Remover"
   },
   "background": {
-    "scripts": [
-      "event.js"
-    ],
+    "scripts": [ "background.js" ],
     "persistent": false
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "*://*.twitch.tv/directory/game/*"
-      ],
-      "js": ["content.js"],
+  "content_scripts": [ {
+      "matches": [ "*://*.twitch.tv/*" ],
+      "js": [ "content.js" ],
       "run_at": "document_idle"
     }
   ],

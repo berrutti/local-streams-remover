@@ -1,11 +1,3 @@
-chrome.runtime.sendMessage({ event: 'removeLocalStreamers' });
-
-chrome.runtime.onMessage.addListener((message) => {
-  if (message.event === 'clearScreen') {
-    clearScreen();
-  }
-});
-
 const divIsLoaded = (): boolean => {
   return document.getElementsByTagName('h4').length > 1;
 }
@@ -39,12 +31,23 @@ const removeDiv = (): void => {
 }
 
 const clearScreen = () => {
-  chrome.storage.sync.get('remove', (res) => {
-    if (res.remove) {
-      let timerID = 0;
-      let startTime = new Date().getTime();
-      timerID = setInterval(checkDom.bind(this, timerID, startTime), 200);
-    }
-  })
+  if (document.URL.includes('twitch.tv/directory/game/')) {
+    chrome.storage.sync.get('remove', (res) => {
+      if (res.remove) {
+        let timerID = 0;
+        let startTime = new Date().getTime();
+        timerID = setInterval(checkDom.bind(this, timerID, startTime), 200);
+      }
+    })
+  }
 }
+
+chrome.runtime.sendMessage({ event: 'displayPageAction' });
+
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.event === 'clearScreen') {
+    clearScreen();
+  }
+});
+
 clearScreen();
