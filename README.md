@@ -4,7 +4,10 @@
 
 ## Installation
 
-Currently there's no packaged version. To use the extension you'll have to manually add it to Chrome:
+You can install the extension from the Chrome web store:  
+https://chrome.google.com/webstore/detail/local-streams-remover/flaeomghfdpoaecmlaanojdnjkhmpccp
+
+If you prefer to package it yourself, you can do so by following these steps:
 
 ```
 git clone https://github.com/berrutti/local-streams-remover.git
